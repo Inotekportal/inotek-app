@@ -1,3 +1,3 @@
-## inotek-headless-app
+## inotek-app
 
-Next.js frontend for the Inotek Headless project.
+Next.js frontend for the Inotek App project.

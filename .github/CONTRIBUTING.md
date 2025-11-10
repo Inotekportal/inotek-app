@@ -1,4 +1,4 @@
-# Contributing to Inotek Headless App
+# Contributing to Inotek App
 
 Thank you for your interest in contributing! We welcome contributions from everyone.
 
