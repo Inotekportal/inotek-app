@@ -1,0 +1,24 @@
+.footer {
+  margin-top: auto;
+  border-top: 1px solid var(--mantine-color-default-border);
+}
+
+.inner {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  align-items: center;
+  padding-top: var(--mantine-spacing-sm);
+  padding-bottom: 0px;
+  padding-right: 1rem;
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    flex-direction: column;
+  }
+}
+
+.links {
+  @media (max-width: $mantine-breakpoint-xs) {
+    margin-top: var(--mantine-spacing-md);
+  }
+}
