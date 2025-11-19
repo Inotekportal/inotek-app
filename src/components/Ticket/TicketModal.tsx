@@ -3,9 +3,9 @@
 import { IconChecklist } from '@tabler/icons-react';
 import { ActionIcon, Affix, Modal } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { Task } from './Task';
+import { Ticket } from './Ticket';
 
-export function TaskModal() {
+export function TicketModal() {
   const [opened, { open, close }] = useDisclosure(false);
 
   return (
@@ -13,7 +13,7 @@ export function TaskModal() {
       <Modal
         opened={opened}
         onClose={close}
-        title="Submit Task"
+        title="Submit Ticket"
         size="md"
         overlayProps={{
           backgroundOpacity: 0.55,
@@ -26,7 +26,7 @@ export function TaskModal() {
         centered
         zIndex={300}
       >
-        <Task onSuccess={close} />
+        <Ticket onSuccess={close} />
       </Modal>
 
       <Affix position={{ bottom: 20, right: 20 }}>
@@ -36,7 +36,7 @@ export function TaskModal() {
           size="xl"
           radius="xl"
           onClick={open}
-          aria-label="Submit task"
+          aria-label="Submit ticket"
         >
           <IconChecklist size={20} />
         </ActionIcon>
@@ -44,3 +44,4 @@ export function TaskModal() {
     </>
   );
 }
+

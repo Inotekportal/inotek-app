@@ -7,7 +7,7 @@ import { Footer } from '@/components/ShellDashboard/Footer';
 import { Header } from '@/components/ShellDashboard/Header/Header';
 import { MainContent } from '@/components/ShellDashboard/MainContent';
 import { Navbar } from '@/components/ShellDashboard/Navbar/Navbar';
-import { TaskModal } from '@/components/Task/TaskModal';
+import { TicketModal } from '@/components/Ticket/TicketModal';
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const [mobileOpened, { toggle: toggleMobile }] = useDisclosure(false);
@@ -57,7 +57,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         <Footer />
       </AppShell.Footer> */}
 
-      <TaskModal />
+      <TicketModal />
     </AppShell>
   );
 }

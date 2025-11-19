@@ -1,19 +1,29 @@
 'use client';
 
-import { IconMail } from '@tabler/icons-react';
-import { Button, Group, Input, Select, SegmentedControl, Stack, Textarea, TextInput } from '@mantine/core';
+import { IconMail, IconUser } from '@tabler/icons-react';
+import {
+  Button,
+  Group,
+  Input,
+  SegmentedControl,
+  Select,
+  Stack,
+  Textarea,
+  TextInput,
+} from '@mantine/core';
 import { hasLength, isEmail, isNotEmpty, useForm } from '@mantine/form';
 import { notifications } from '@mantine/notifications';
 import { linksMockdata } from '@/components/ShellDashboard/Navbar/Navbar';
 
-interface TaskProps {
+interface TicketProps {
   onSuccess?: () => void;
 }
 
-export function Task({ onSuccess }: TaskProps) {
+export function Ticket({ onSuccess }: TicketProps) {
   const form = useForm({
     mode: 'uncontrolled',
     initialValues: {
+      name: '',
       email: '',
       content: '',
       page: '',
@@ -21,7 +31,7 @@ export function Task({ onSuccess }: TaskProps) {
     },
     validate: {
       email: isEmail('Enter a valid email address'),
-      content: hasLength({ min: 10 }, 'Task content must be at least 10 characters'),
+      content: hasLength({ min: 10 }, 'Ticket content must be at least 10 characters'),
       page: isNotEmpty('Please select a page'),
       category: isNotEmpty('Please select a category'),
     },
@@ -43,11 +53,11 @@ export function Task({ onSuccess }: TaskProps) {
 
       // Add real API call here
       // eslint-disable-next-line no-console
-      console.log('Task submission:', values);
+      console.log('Ticket submission:', values);
 
       notifications.show({
         title: 'Success!',
-        message: 'Task has been submitted successfully',
+        message: 'Ticket has been submitted successfully',
         color: 'green',
       });
 
@@ -66,6 +76,14 @@ export function Task({ onSuccess }: TaskProps) {
     <form onSubmit={form.onSubmit(handleSubmit)}>
       <Stack gap="md">
         <TextInput
+          label="Name"
+          placeholder="Your name"
+          leftSection={<IconUser size={16} />}
+          key={form.key('name')}
+          {...form.getInputProps('name')}
+        />
+
+        <TextInput
           withAsterisk
           data-autofocus
           label="Email"
@@ -77,9 +95,11 @@ export function Task({ onSuccess }: TaskProps) {
 
         <Textarea
           withAsterisk
-          label="Task Content"
-          placeholder="Describe your task..."
-          minRows={4}
+          label="Ticket Content"
+          placeholder="Describe your ticket..."
+          autosize
+          minRows={6}
+          maxRows={6}
           key={form.key('content')}
           {...form.getInputProps('content')}
         />
@@ -96,11 +116,7 @@ export function Task({ onSuccess }: TaskProps) {
           {...form.getInputProps('page')}
         />
 
-        <Input.Wrapper
-          label="Category"
-          withAsterisk
-          error={form.errors.category}
-        >
+        <Input.Wrapper label="Category" withAsterisk error={form.errors.category}>
           <SegmentedControl
             fullWidth
             mt="xs"
@@ -123,4 +139,3 @@ export function Task({ onSuccess }: TaskProps) {
     </form>
   );
 }
-
