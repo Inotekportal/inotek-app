@@ -17,7 +17,7 @@ export function Welcome() {
       </Title>
       <Text c="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="0">
         The DEMO version of the{' '}
-        <Anchor href="https://inotek-app.appto.live/" size="lg">
+        <Anchor href="https://inotek-app.appto.live/dashboard" size="lg">
           Inotek Dashboard
         </Anchor>{' '}
         application.
