@@ -14,7 +14,7 @@ const links = [
 ];
 
 export function HeaderSearch() {
-  const [opened, { toggle }] = useDisclosure(false);
+  const [opened, { toggle }] = useDisclosure();
 
   const items = links.map((link) => (
     <a

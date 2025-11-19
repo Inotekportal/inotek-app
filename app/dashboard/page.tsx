@@ -1,6 +1,7 @@
 'use client';
 
 import { AppShell, Box, Flex } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 import { CardGradient } from '@/components/CardGradient/CardGradient';
 import { FeaturesAsymmetrical } from '@/components/FeaturesAsymmetrical/FeaturesAsymmetrical';
 import { HeaderSearch } from '@/components/HeaderSearch/HeaderSearch';
@@ -9,13 +10,15 @@ import { NavbarSimple } from '../../components/NavbarSimple/NavbarSimple';
 import { FooterSimple } from '../../components/SimpleFooter/FooterSimple';
 
 export default function DashboardPage() {
+  const [opened] = useDisclosure();
+
   return (
     <>
       <AppShell
         padding="md"
         layout="default"
         header={{ height: 60 }}
-        navbar={{ width: 300, breakpoint: 'sm' }}
+        navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
       >
         <AppShell.Header>
           <HeaderSearch />
