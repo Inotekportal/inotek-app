@@ -65,7 +65,12 @@ export function Navbar({
           <UnstyledButton
             component={Link}
             href={link.slug}
-            onClick={() => onActiveChange(link.label)}
+            onClick={() => {
+              onActiveChange(link.label);
+              if (mobileOpened && onToggleMobile) {
+                onToggleMobile();
+              }
+            }}
             onMouseEnter={() => setHovered(link.label)}
             onMouseLeave={() => setHovered(null)}
             className={classes.iconLink}
@@ -93,7 +98,12 @@ export function Navbar({
           <UnstyledButton
             component={Link}
             href={link.slug}
-            onClick={() => onActiveChange(link.label)}
+            onClick={() => {
+              onActiveChange(link.label);
+              if (mobileOpened && onToggleMobile) {
+                onToggleMobile();
+              }
+            }}
             onMouseEnter={() => setHovered(link.label)}
             onMouseLeave={() => setHovered(null)}
             className={classes.iconLink}
@@ -118,7 +128,12 @@ export function Navbar({
           className={classes.link}
           data-active={isActive || undefined}
           data-hovered={hovered === link.label || undefined}
-          onClick={() => onActiveChange(link.label)}
+          onClick={() => {
+            onActiveChange(link.label);
+            if (mobileOpened && onToggleMobile) {
+              onToggleMobile();
+            }
+          }}
           onMouseEnter={() => setHovered(link.label)}
           onMouseLeave={() => setHovered(null)}
           key={link.label}
