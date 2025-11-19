@@ -1,9 +1,0 @@
-# This file defines who owns which files in the repository.
-# Code owners are automatically requested for review when someone opens a pull request.
-
-# Default owner for everything
-* @chrisonoo
-
-# Examples:
-# *.js    @frontend-team
-# /docs/  @docs-team

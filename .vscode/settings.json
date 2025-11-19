@@ -6,10 +6,8 @@
     "**/*.less",
     "node_modules/@mantine/core/styles.css"
   ],
-  "css.validate": false,
-  "less.validate": false,
-  "scss.validate": false,
   "files.associations": {
-    "*.module.css": "postcss"
+    "*.module.css": "postcss",
+    "*.mdx": "mdx"
   }
 }

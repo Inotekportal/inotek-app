@@ -1,7 +1,10 @@
+import React from 'react';
+
 import '@mantine/core/styles.css';
+import '@mantine/notifications/styles.css';
 
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
-import { theme } from '../theme';
+import { theme } from '@/app/theme';
 
 export const parameters = {
   layout: 'fullscreen',
@@ -29,7 +32,7 @@ export const globalTypes = {
 };
 
 export const decorators = [
-  (renderStory: any, context: any) => {
+  (renderStory: () => React.ReactElement, context: { globals: { theme?: string } }) => {
     const scheme = (context.globals.theme || 'light') as 'light' | 'dark';
     return (
       <MantineProvider theme={theme} forceColorScheme={scheme}>
