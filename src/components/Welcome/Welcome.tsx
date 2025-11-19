@@ -12,13 +12,13 @@ export function Welcome() {
           variant="gradient"
           gradient={{ from: 'pink', to: 'yellow' }}
         >
-          Mantine APP
+          Inotek App
         </Text>
       </Title>
       <Text c="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="0">
         The DEMO version of the{' '}
-        <Anchor href="https://mantine.dev/guides/next/" size="lg">
-          Mantine App
+        <Anchor href="https://inotek-app.appto.live/" size="lg">
+          Inotek Dashboard
         </Anchor>{' '}
         application.
       </Text>
